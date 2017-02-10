@@ -15,19 +15,18 @@ class MenuItemList extends React.Component{
 
 
     render(){
-        this.context.store.subscribe(() => {  
-            
+        this.context.store.subscribe(() => { 
             this.setState({menus : this.context.store.getState().checkout.menus});                       
         });
 
-        return(<div className="div-large">
+        return(<div className="div-full-height scrollable">
                  { this.createMenuList() }
                </div>);
     }
     
     createMenuList(){     
         return(this.state.menus.map((menu,index)=>{
-            return  ( <MenuItem key={menu.id} name={menu.name} price={menu.price}></MenuItem>)}))
+            return  ( <MenuItem key={menu.id} id={menu.id} name={menu.name} price={menu.price} description={menu.description}></MenuItem>)}))
             }
     }
  

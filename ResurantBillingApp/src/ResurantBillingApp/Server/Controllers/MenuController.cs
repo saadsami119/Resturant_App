@@ -13,17 +13,26 @@ namespace ResurantBillingApp.Server.Controllers
         {
             return new List<Menu>
             {
-                new Menu {Id = 1, Name = "Menu 1", Price = 10},
-                new Menu {Id = 2, Name = "Menu 2", Price = 20},
-                new Menu {Id = 3, Name = "Menu 3", Price = 30}
+                new Menu {Id = 1, Name = "Menu 1", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
+                new Menu {Id = 2, Name = "Menu 2", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
+                new Menu {Id = 3, Name = "Menu 3", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30},
+                new Menu {Id = 4, Name = "Menu 4", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
+                new Menu {Id = 5, Name = "Menu 5", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
+                new Menu {Id = 6, Name = "Menu 6", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30}
             };
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{name}")]
+        public IEnumerable<Menu> Get(string name)
         {
-            return "value";
+            return new List<Menu>
+            {
+                new Menu {Id = 1, Name = "Menu 1", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
+                new Menu {Id = 2, Name = "Menu 2", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
+                new Menu {Id = 3, Name = "Menu 3", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30}
+
+            };
         }
 
         // POST api/values

@@ -9,13 +9,11 @@ const store = AppStore();
 class App extends React.Component{
     render(){
         return(
-            <div>
                 <Provider store={store}>
                     <AppRouter/>
-                </Provider>
-            </div>
+                </Provider>            
          );
     }
 }
  
-ReactDOM.render(<div><App/></div> , document.getElementById('app'));
+ReactDOM.render(<App/> , document.getElementById('app'));
