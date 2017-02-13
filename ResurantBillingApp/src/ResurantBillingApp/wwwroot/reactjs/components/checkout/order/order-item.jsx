@@ -11,20 +11,41 @@ class OrderItem extends React.Component {
 
     render() {
         return (
-            <tr>
-                <td>{this.props.name}</td>
-                <td>${this.props.price}</td>
-                <td>
-                    <input id="quantity" name="quantity" type="number" className="number-textbox" value={this.state.quantity} onChange={this.onQuantityChanged} ></input>
-                </td>
-                <td>${this.props.amount}</td>
-            </tr>
+            <div>
+                <div className="list-group-item">
+                    <div className="row-content">
+                        <div className="least-content"><h4><strong>${this.props.amount}</strong></h4></div>
+                        <div className="least-content" style={{ marginTop: 50 }} >
+                            <button type="button" className="btn btn-danger btn-sm">
+                                <span className="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+
+                        <h4 className="list-group-item-heading">
+                            <p className=" text-info no-space">{this.props.name}</p>
+                        </h4>
+                        <div className="row">
+                            <div className="col-xs-3">
+                                <div className="form-group form-group-sm label-static">
+                                    <label className="control-label">Quantity</label>
+                                    <input type="text" className="form-control" type="number" value={this.state.quantity} min="1" onChange={this.onQuantityChanged}></input>
+                                </div>
+                            </div>
+                            <div className="col-xs-6">
+                                <p className="list-group-item-text" style={{ marginTop: 21, textAlign: 'center' }} > <em> x ${this.props.price}</em></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="list-group-separator"></div>
+            </div>
         );
     }
 
-    onQuantityChanged(event) {       
+    onQuantityChanged(event) {
         this.setState({ quantity: event.target.value })
-        this.context.store.dispatch(OnOrderQuantityChanged(this.props.id))
+        this.context.store.dispatch(OnOrderQuantityChanged(this.props.id, event.target.value))
     }
 
 }

@@ -22,9 +22,9 @@
             return newState;
 
         case "ON_ORDER_QUANTITY_CHANGED":
-            var newState = Object.assign({}, state);
-            let selectedOrder = newState.selectedOrders.filter(x => x.id == action.payload)[0];
-            selectedOrder.quantity = selectedOrder.quantity + 1;
+            var newState = Object.assign({}, state);   
+            let selectedOrder = newState.selectedOrders.filter(x => x.id == action.payload.selectedOrderId)[0];
+            selectedOrder.quantity = action.payload.newQuantity;
             selectedOrder.amount = selectedOrder.price * selectedOrder.quantity;
             return newState;
 

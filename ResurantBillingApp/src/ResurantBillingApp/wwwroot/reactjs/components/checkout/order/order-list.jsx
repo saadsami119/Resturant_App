@@ -15,38 +15,28 @@ class OrderItemList extends React.Component {
 
     render() {
 
-        this.context.store.subscribe(() => { 
-            this.setState({selectedOrders : this.context.store.getState().checkout.selectedOrders});                       
+        this.context.store.subscribe(() => {
+            this.setState({ selectedOrders: this.context.store.getState().checkout.selectedOrders });
         });
 
-        return (
-             <table className="table table-responsive table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Menu</th>                           
-                            <th>Price</th>                             
-                            <th>Quantity</th>                           
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
+       return (
+        <div className="div-full-height scrollable" >
+            <div className="list-group div-full-height">
+                {this.createSelectedOrdersList()}
+            </div>
+        </div>);
+    }
 
-                    <tbody>
-                        {this.createSelectedOrdersList()}
-                    </tbody>
-                </table>
-            );
-        }
+    createSelectedOrdersList() {
 
-    createSelectedOrdersList() {       
-        
         return (this.state.selectedOrders.map((order, index) => {
             return (<OrderItem key={order.id} id={order.id} name={order.name} price={order.price} quantity={order.quantity} amount={order.amount} ></OrderItem>)
         }))
     }
 }
 
-OrderItemList.contextTypes={
-     store : React.PropTypes.object
+OrderItemList.contextTypes = {
+    store: React.PropTypes.object
 }
 
 export default OrderItemList;

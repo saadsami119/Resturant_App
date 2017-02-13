@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ResurantBillingApp.Server.Core.Interface.Repository;
+using ResurantBillingApp.Server.Core.Model;
 
 namespace ResurantBillingApp.Server.Core.Repository.Database
 {
@@ -8,11 +9,13 @@ namespace ResurantBillingApp.Server.Core.Repository.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=./resturant.db");
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
 
-        //public DbSet<User> Users { get; set; }
+        public DbSet<Menu> Menus { get; set; }
 
-        //public DbSet<Appointment> Appointments { get; set; }
+        
 
     }
 }

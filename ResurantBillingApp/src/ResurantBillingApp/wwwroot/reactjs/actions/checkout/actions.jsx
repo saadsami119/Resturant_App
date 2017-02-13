@@ -12,9 +12,9 @@ export const onMenuSelected = (selectedMenuId) =>{
     }
 }
 
-export const OnOrderQuantityChanged = (selectedOrderId)=>{
+export const OnOrderQuantityChanged = (selectedOrderId, newQuantity)=>{
     return {
         type : "ON_ORDER_QUANTITY_CHANGED",
-        payload :  selectedOrderId
+        payload :  { selectedOrderId : selectedOrderId , newQuantity}
     }
 }

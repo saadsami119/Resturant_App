@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ResurantBillingApp.Server.Core.Model;
 
@@ -7,33 +8,27 @@ namespace ResurantBillingApp.Server.Controllers
     [Route("api/[controller]")]
     public class MenuController : Controller
     {
-        // GET api/values
+        private readonly IMenuService _menuService;
+
+        public MenuController(IMenuService menuService)
+        {
+            this._menuService = menuService;
+        }
+
+        
         [HttpGet]
         public IEnumerable<Menu> Get()
         {
-            return new List<Menu>
-            {
-                new Menu {Id = 1, Name = "Menu 1", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
-                new Menu {Id = 2, Name = "Menu 2", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
-                new Menu {Id = 3, Name = "Menu 3", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30},
-                new Menu {Id = 4, Name = "Menu 4", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
-                new Menu {Id = 5, Name = "Menu 5", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
-                new Menu {Id = 6, Name = "Menu 6", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30}
-            };
+           return this._menuService.GetAllMenus();
         }
 
-        // GET api/values/5
+       
         [HttpGet("{name}")]
         public IEnumerable<Menu> Get(string name)
         {
-            return new List<Menu>
-            {
-                new Menu {Id = 1, Name = "Menu 1", Description="Donec id elit non mi porta gravida at eget metus.", Price = 10},
-                new Menu {Id = 2, Name = "Menu 2", Description="Donec id elit non mi porta gravida at eget metus.", Price = 20},
-                new Menu {Id = 3, Name = "Menu 3", Description="Donec id elit non mi porta gravida at eget metus.", Price = 30}
-
-            };
+           return  this._menuService.GetAllMenusByName(name).ToList();            
         }
+
 
         // POST api/values
         [HttpPost]

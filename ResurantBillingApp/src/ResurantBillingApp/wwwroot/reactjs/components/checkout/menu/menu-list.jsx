@@ -2,37 +2,44 @@
 import MenuItem from "./menu-item.jsx";
 
 
-class MenuItemList extends React.Component{
+class MenuItemList extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {menus : []};
-    }  
+        this.state = { menus: [] };
+    }
 
-    componentDidMount(){
-        this.setState({menus : []} );
+    componentDidMount() {
+        this.setState({ menus: [] });
     }
 
 
-    render(){
-        this.context.store.subscribe(() => { 
-            this.setState({menus : this.context.store.getState().checkout.menus});                       
+    render() {
+        this.context.store.subscribe(() => {
+            this.setState({ menus: this.context.store.getState().checkout.menus });
         });
 
-        return(<div className="div-full-height scrollable">
-                 { this.createMenuList() }
-               </div>);
+        return (
+        <div className="div-full-height scrollable" >
+            <div className="list-group div-full-height">
+                {this.createMenuList()}
+            </div>
+        </div>);
     }
-    
-    createMenuList(){     
-        return(this.state.menus.map((menu,index)=>{
-            return  ( <MenuItem key={menu.id} id={menu.id} name={menu.name} price={menu.price} description={menu.description}></MenuItem>)}))
-            }
-    }
- 
 
-MenuItemList.contextTypes={
-     store : React.PropTypes.object
+    createMenuList() {
+        return (this.state.menus.map((menu, index) => {
+            return (
+                <MenuItem key={menu.id} id={menu.id} name={menu.name} price={menu.price} description={menu.description}>
+                </MenuItem>                 
+            )
+        }))
+    }
+}
+
+
+MenuItemList.contextTypes = {
+    store: React.PropTypes.object
 }
 
 export default MenuItemList;
