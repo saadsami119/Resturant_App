@@ -27,6 +27,10 @@
             selectedOrder.quantity = action.payload.newQuantity;
             selectedOrder.amount = selectedOrder.price * selectedOrder.quantity;
             return newState;
+    
+    case 'ON_STORE_CLEAR':                        
+            state.selectedOrders = [];        
+            return state;
 
         default:
             return state

@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { onMenuSelected } from "../../../actions/checkout/actions.jsx";
+import { onMenuSelected } from "../../../actions/checkout/menu-actions.jsx";
 
 class MenuItem extends React.Component {
     render() {

@@ -2,7 +2,7 @@
 import axios from 'axios';
 import MenuItemList from "./menu-list.jsx";
 import MenuSearch from "./menu-search.jsx";
-import { onMenuListFetched } from "../../../actions/checkout/actions.jsx";
+import { onMenuListFetched } from "../../../actions/checkout/menu-actions.jsx";
 
 class Menu extends React.Component {
 

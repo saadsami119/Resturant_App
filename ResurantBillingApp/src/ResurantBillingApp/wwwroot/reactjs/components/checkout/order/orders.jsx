@@ -6,11 +6,11 @@ class Order extends React.Component {
         return (
             <div className="container-fluid div-full-height">
                 <div className="well div-full-height">
-                     <div style={{ height: '15%' }}>
+                    <div style={{ height: '10%' }}>
                         <legend>Orders</legend>
                     </div>
-
-                   <div style={{ height: '85%' }}>
+                    <hr></hr>
+                    <div style={{ height: '85%' }}>
                         <OrderItemList></OrderItemList>
                     </div>
 

@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { OnOrderQuantityChanged } from "../../../actions/checkout/actions.jsx";
+import { OnOrderQuantityChanged } from "../../../actions/checkout/order-actions.jsx";
 
 class OrderItem extends React.Component {
 
