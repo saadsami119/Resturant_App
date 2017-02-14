@@ -14,7 +14,7 @@ class MenuSearch extends React.Component {
 
     render() {
         return (<div >
-            <div className="form-group label-floating input-group">
+            <div className="form-group form-group-sm label-floating input-group">
                 <label className="control-label">Search</label>
                 <input type="text" className="form-control" value={this.state.searchMenuString} onChange={this.onSearchTextChanged}></input>
                 <div className="input-group-btn">

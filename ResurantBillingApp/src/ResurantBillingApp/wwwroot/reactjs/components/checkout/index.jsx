@@ -10,15 +10,15 @@ class Checkout extends React.Component {
 
             <div className="row div-full-height">
 
-                <div className="col-sm-4 div-full-height">
+                <div className="col-sm-4 div-full-height component-container" >
                     <Menu></Menu>
                 </div>
 
-                <div className="col-sm-4 div-full-height">                   
+                <div className="col-sm-4 div-full-height component-container">                   
                         <Order></Order>
                 </div>
 
-                <div className="col-sm-4 div-full-height">                   
+                <div className="col-sm-4 div-full-height component-container" >                   
                         <Payment></Payment>                   
                 </div>
             </div>

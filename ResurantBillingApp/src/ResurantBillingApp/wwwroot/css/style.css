@@ -1,6 +1,9 @@
 html,body{
     height:98%;
-    margin: 10px;
+    width: 99%;
+    padding-right:3px;
+    padding-left: 3px; 
+    
 }
 
 .div-full-height{    
@@ -16,8 +19,36 @@ html,body{
     overflow-y: auto;
 }
 
+.parent-container{
+    margin-top: 15px;
+       
+}
 
 .list-group .list-group-separator:before { 
   float: left;
+  margin-bottom : 5px;
+  margin-top : 1px;  
 }
 
+.list-box{
+    padding-top:5px ;
+    padding-bottom:5px;
+}
+
+.menu-btn{
+    padding: 5px 0px 5px 0px;
+    margin: 3px;
+}
+
+.component-container{
+margin-top: 15px;
+}
+
+.quantity-textbox{
+     height: 23px;
+     width: 50px;
+     text-align: center;
+     font-style: italic;
+     font-size: 14px;
+
+}

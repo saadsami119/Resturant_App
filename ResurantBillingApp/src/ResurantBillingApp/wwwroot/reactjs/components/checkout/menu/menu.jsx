@@ -17,16 +17,20 @@ class Menu extends React.Component {
         return (
             <div className="container-fluid div-full-height">
                 <div className="well div-full-height">
+                   
                     <div style={{ height: '5%' }}>
                         <legend>Menu</legend>
                     </div>
 
-                    <div style={{ height: '10%' }}>
+                    <div style={{ height: '5%' }}>
                        <MenuSearch></MenuSearch>
+                      
                     </div>
-                    <div style={{ height: '85%' }}>
-                        <MenuItemList></MenuItemList>
+                 
+                    <div className="list-box" style={{ height: '90%' }}>                      
+                        <MenuItemList></MenuItemList>                      
                     </div>
+
                 </div>
             </div>
         );

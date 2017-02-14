@@ -8,9 +8,10 @@ class Order extends React.Component {
                 <div className="well div-full-height">
                     <div style={{ height: '10%' }}>
                         <legend>Orders</legend>
-                    </div>
-                    <hr></hr>
-                    <div style={{ height: '85%' }}>
+                        <hr></hr>                        
+                    </div>                   
+
+                    <div className="list-box" style={{ height: '90%' }}>
                         <OrderItemList></OrderItemList>
                     </div>
 

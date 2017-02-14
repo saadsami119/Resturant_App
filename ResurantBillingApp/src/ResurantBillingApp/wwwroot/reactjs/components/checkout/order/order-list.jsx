@@ -20,15 +20,14 @@ class OrderItemList extends React.Component {
         });
 
        return (
-        <div className="div-full-height scrollable" >
-            <div className="list-group div-full-height">
-                {this.createSelectedOrdersList()}
+         <div className="div-full-height" >
+            <div className="list-group div-full-height scrollable">
+                {this.generateSelectedOrdersList()}
             </div>
         </div>);
     }
 
-    createSelectedOrdersList() {
-
+    generateSelectedOrdersList() {
         return (this.state.selectedOrders.map((order, index) => {
             return (<OrderItem key={order.id} id={order.id} name={order.name} price={order.price} quantity={order.quantity} amount={order.amount} ></OrderItem>)
         }))

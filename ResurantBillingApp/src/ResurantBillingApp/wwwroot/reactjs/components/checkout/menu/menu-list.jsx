@@ -20,14 +20,14 @@ class MenuItemList extends React.Component {
         });
 
         return (
-        <div className="div-full-height scrollable" >
-            <div className="list-group div-full-height">
-                {this.createMenuList()}
+        <div className="div-full-height" >
+            <div className="list-group div-full-height scrollable">
+                {this.generateMenuList()}
             </div>
         </div>);
     }
 
-    createMenuList() {
+    generateMenuList() {
         return (this.state.menus.map((menu, index) => {
             return (
                 <MenuItem key={menu.id} id={menu.id} name={menu.name} price={menu.price} description={menu.description}>
